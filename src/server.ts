@@ -13,8 +13,12 @@ import { serviceEstacionRouter } from "./service/infrastructure/ServiceRouter";
 
 
 const app = express();
-app.use(cors());
+const corsOptions: cors.CorsOptions = {
+  origin: '*',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], 
+};
 
+app.use(cors(corsOptions));
 
 
 const signale = new Signale();
